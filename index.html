@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gladiadores de Gravedad</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="ui-container">
+    <h1>Gladiadores de Gravedad</h1>
+    <div id="menu">
+      <p>Bienvenido al campo de batalla P2P.</p>
+      <div class="card">
+        <h3>Crear Partida</h3>
+        <p>Sé el Host. Administrarás la física y la partida.</p>
+        <button id="btn-host" class="primary">Crear Nueva Partida</button>
+      </div>
+
+      <div class="card">
+        <h3>Unirse a Partida</h3>
+        <p>Conéctate a un amigo usando su código de sala.</p>
+        <input type="text" id="input-peer-id" placeholder="ID de la sala (Ej: host-xyz)" />
+        <button id="btn-join" class="secondary">Unirse a Partida</button>
+      </div>
+    </div>
+
+    <div id="lobby" class="hidden">
+      <h2>Sala de Espera</h2>
+      <p>Tu código de sala es:</p>
+      <div class="id-display" id="my-peer-id">Generando...</div>
+      <p>Comparte este código con tus amigos para que se unan.</p>
+      
+      <div class="players-list">
+        <h3>Jugadores Conectados: <span id="player-count">1</span></h3>
+      </div>
+      
+      <button id="btn-start" class="primary hidden">Comenzar Partida</button>
+    </div>
+  </div>
+
+  <div id="game-container" class="hidden">
+    <canvas id="game-canvas" width="800" height="600"></canvas>
+    <div id="game-hud">
+      <div class="hud-item">Jugador: <span id="hud-player-id"></span></div>
+      <div class="hud-item">Controles: [A][D] Mover | [W]/[Espacio] Saltar | [Shift] Gravedad</div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
